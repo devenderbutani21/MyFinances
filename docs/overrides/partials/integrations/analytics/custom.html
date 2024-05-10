@@ -2,3 +2,6 @@
     <script defer src="{{ config.extra.analytics.property }}" data-website-id="{{ config.extra.analytics.id }}">
     </script>
 {% endif %}
+{% if config.extra.chatbot %}
+    {{ config.extra.chatbot.script }}
+{% endif %}
