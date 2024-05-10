@@ -2,7 +2,7 @@
     <script defer src="{{ config.extra.analytics.property }}" data-website-id="{{ config.extra.analytics.id }}">
     </script>
 {% endif %}
-{% if config.extra.chatbot %}
+{% if config.extra.chatbot and config.extra.chatbot.script %}
     {{ config.extra.chatbot.script }}
     <script>
         console.log("loading chatbot...")
