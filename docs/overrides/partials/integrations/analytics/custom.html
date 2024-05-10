@@ -4,4 +4,8 @@
 {% endif %}
 {% if config.extra.chatbot %}
     {{ config.extra.chatbot.script }}
+{% else %}
+<script>
+    console.log("cannot load chatbot")
+</script>
 {% endif %}
