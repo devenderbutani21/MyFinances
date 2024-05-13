@@ -1,4 +1,15 @@
 {% if config.extra.analytics.property and config.extra.analytics.id %}
     <script defer src="{{ config.extra.analytics.property }}" data-website-id="{{ config.extra.analytics.id }}">
     </script>
+    
+    {% if config.extra.analytics.chatbot %}
+        <script>
+            console.log("loading chatbot...")
+        </script>
+        {{ config.extra.analytics.chatbot }}
+    {% else %}
+        <script>
+            console.log("cannot load chatbot from env")
+        </script>
+    {% endif %}
 {% endif %}
