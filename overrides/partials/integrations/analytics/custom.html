@@ -1,0 +1,20 @@
+{% if config.extra.analytics.property %}
+<!--     <script defer src="{{ config.extra.analytics.property }}" data-website-id="{{ config.extra.analytics.id }}"> -->
+<!--     </script> -->
+    {{ config.extra.analytics.property | safe }}
+{% else %}
+    <script>
+        console.log("failed to load analytics... no property")
+    </script>
+    
+    {% if config.extra.analytics.chatbot %}
+        <script>
+            console.log("loading chatbot...")
+        </script>
+        {{ config.extra.analytics.chatbot }}
+    {% else %}
+        <script>
+            console.log("cannot load chatbot from env")
+        </script>
+    {% endif %}
+{% endif %}
